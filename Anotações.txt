@@ -1,0 +1,4 @@
+Uma sintaxe para foreach dentro de um arquivo com HTML:
+    <?php foreach ($artigos as $artigo) : ?>
+        ... Código a ser repetido/iterado.
+    <?php endforeach; ?>
