@@ -2,3 +2,11 @@ Uma sintaxe para foreach dentro de um arquivo com HTML:
     <?php foreach ($artigos as $artigo) : ?>
         ... Código a ser repetido/iterado.
     <?php endforeach; ?>
+
+Para conectar com o Mysql, é necessário usar uma extensão do PHP chamada
+mysqli (conforme exemplo do arquivo config.php). O objeto dessa classe possui
+4 parâmetros: host, usuario, senha e database (nesta ordem).
+    $mysql = new mysqli('db', 'user', 'senha', 'blog');
+
+É importante setar o charset para UTF-8, conforme o HTML:
+    $mysql->set_charset('utf8');
