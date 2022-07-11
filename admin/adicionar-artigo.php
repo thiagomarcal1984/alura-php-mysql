@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     $artigo->adicionar($_POST['titulo'], $_POST['conteudo']);
 
     // Redirecionar para a própria página com o método GET.
-    header('Location: adicionar-artigo.php');
+    header('Location: /admin/index.php');
     die();
 }
 // echo "<pre>";
