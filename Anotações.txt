@@ -15,3 +15,7 @@ Algumas variáveis úteis no PHP:
     $_POST: contém dados de requisição POST.
     $_GET: contém dados de requisição -GET.
     $_SERVER: contém várias informações do servidor, por exemplo o método HTTP.
+
+Comando a ser usado após uma requisição POST (padrão POST REDIRECT GET):
+    header('Location: adicionar-artigo.php');
+    die();

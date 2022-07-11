@@ -6,6 +6,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 {
     $artigo = new Artigo($mysql);
     $artigo->adicionar($_POST['titulo'], $_POST['conteudo']);
+
+    // Redirecionar para a própria página com o método GET.
+    header('Location: adicionar-artigo.php');
+    die();
 }
 // echo "<pre>";
 // var_dump($_SERVER);
