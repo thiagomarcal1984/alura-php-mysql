@@ -1,7 +1,5 @@
 <?php
 
-require 'config.php';
-
 class Artigo 
 {
     private $mysql;
@@ -24,5 +22,11 @@ class Artigo
         $selecionaArtigo->bind_param('s', $id);
         $selecionaArtigo->execute();
         return $selecionaArtigo->get_result()->fetch_assoc();
+    }
+
+    public function adicionar($titulo, $conteudo){
+        $insereArtigo = $this->mysql->prepare("INSERT INTO artigos (titulo, conteudo) VALUES(?, ?)");
+        $insereArtigo->bind_param('ss', $titulo, $conteudo);
+        $insereArtigo->execute();
     }
 }

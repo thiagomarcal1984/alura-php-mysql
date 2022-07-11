@@ -10,3 +10,8 @@ mysqli (conforme exemplo do arquivo config.php). O objeto dessa classe possui
 
 É importante setar o charset para UTF-8, conforme o HTML:
     $mysql->set_charset('utf8');
+
+Algumas variáveis úteis no PHP:
+    $_POST: contém dados de requisição POST.
+    $_GET: contém dados de requisição -GET.
+    $_SERVER: contém várias informações do servidor, por exemplo o método HTTP.
