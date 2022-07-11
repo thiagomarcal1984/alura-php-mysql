@@ -24,9 +24,17 @@ class Artigo
         return $selecionaArtigo->get_result()->fetch_assoc();
     }
 
-    public function adicionar($titulo, $conteudo){
+    public function adicionar($titulo, $conteudo)
+    {
         $insereArtigo = $this->mysql->prepare("INSERT INTO artigos (titulo, conteudo) VALUES(?, ?)");
         $insereArtigo->bind_param('ss', $titulo, $conteudo);
         $insereArtigo->execute();
+    }
+
+    public function remover($id):void
+    {
+        $removerArtigo = $this->mysql->prepare("DELETE FROM artigos WHERE id = ?");
+        $removerArtigo->bind_param('s', $id);
+        $removerArtigo->execute();
     }
 }

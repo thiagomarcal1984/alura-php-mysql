@@ -1,15 +1,13 @@
 <?php
 require '../config.php';
 require '../src/Artigo.php';
+require '../src/redireciona.php';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST')
 {
     $artigo = new Artigo($mysql);
     $artigo->adicionar($_POST['titulo'], $_POST['conteudo']);
-
-    // Redirecionar para a própria página com o método GET.
-    header('Location: /admin/index.php');
-    die();
+    redireciona('/admin/index.php');
 }
 // echo "<pre>";
 // var_dump($_SERVER);
