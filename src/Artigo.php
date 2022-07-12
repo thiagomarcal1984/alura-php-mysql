@@ -31,6 +31,13 @@ class Artigo
         $insereArtigo->execute();
     }
 
+    public function editar($id, $titulo, $conteudo)
+    {
+        $editaArtigo = $this->mysql->prepare("UPDATE artigos SET titulo = ?, conteudo = ? WHERE id = ?");
+        $editaArtigo->bind_param('sss', $titulo, $conteudo, $id);
+        $editaArtigo->execute();
+    }
+
     public function remover($id):void
     {
         $removerArtigo = $this->mysql->prepare("DELETE FROM artigos WHERE id = ?");
