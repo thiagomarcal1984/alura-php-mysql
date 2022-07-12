@@ -19,3 +19,5 @@ Algumas variáveis úteis no PHP:
 Comando a ser usado após uma requisição POST (padrão POST REDIRECT GET):
     header('Location: adicionar-artigo.php');
     die();
+
+A função nl2br converte as quebras de linha em tags <br> do HTML.

@@ -24,7 +24,7 @@ $artigos = $artigo->exibirTodos();
                 </a>
             </h2>
             <p>
-                <?= $artigo['conteudo'] ?>
+                <?= nl2br($artigo['conteudo']) ?>
             </p>
         <?php endforeach; ?>
     </div>
